@@ -40,7 +40,7 @@ jobs:
             clang \
             libelf-dev \
             linux-headers-generic \
-            bpftool
+            linux-tools-generic
 
       - name: Install bpf-linker
         run: cargo install bpf-linker
