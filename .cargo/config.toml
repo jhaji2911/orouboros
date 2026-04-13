@@ -1,0 +1,6 @@
+# Cargo configuration for the agent-vault workspace
+
+[alias]
+# xtask - run the build automation tool
+# Usage: cargo xtask build-all --release
+xtask = "run --manifest-path xtask/Cargo.toml --"
