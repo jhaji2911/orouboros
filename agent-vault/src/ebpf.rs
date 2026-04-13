@@ -6,7 +6,7 @@
 use aya::{
     Ebpf,
     maps::HashMap,
-    programs::{CgroupSkb, CgroupSkbAttachType},
+    programs::{CgroupAttachMode, CgroupSkb, CgroupSkbAttachType},
 };
 use aya_log::EbpfLogger;
 use agent_vault_common::TokenPair;
@@ -53,7 +53,11 @@ pub async fn run_ebpf_mode() -> Result<()> {
 
     program.load().context("Failed to load eBPF program into the kernel")?;
     program
-        .attach(&cgroup_file, CgroupSkbAttachType::Egress)
+        .attach(
+            &cgroup_file,
+            CgroupSkbAttachType::Egress,
+            CgroupAttachMode::Single,
+        )
         .context("Failed to attach cgroup_skb/egress")?;
     log::info!("eBPF program attached to {}", CGROUP_PATH);
 
