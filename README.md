@@ -1,4 +1,4 @@
-# agent-vault — Zero-Knowledge Credential Injector (v2)
+# agent-vault — Zero-Knowledge Credential Injector
 
 An AI coding agent sends HTTP requests using a **dummy token** (`FAKE_TOKEN_12345`).
 
