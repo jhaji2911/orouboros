@@ -1,13 +1,13 @@
 class AgentVault < Formula
   desc "Zero-Knowledge Credential Injector — rewrites dummy tokens in HTTP requests before they leave the machine"
   homepage "https://github.com/jhaji2911/ouroboros"
-  version "0.1.1"
+  version "0.1.2"
 
   # Universal binary (arm64 + x86_64 merged with lipo).
   # SHA256 and URL version are auto-patched by .github/workflows/release-macos.yml
   # when a new tag is pushed. Do not edit these lines manually.
-  url "https://github.com/jhaji2911/ouroboros/releases/download/v0.1.1/agent-vault-0.1.1-universal-apple-darwin.tar.gz"
-  sha256 "0baf47c93a01413144518383930ef42f018a620afa7298e61a2dff249cf539e3"
+  url "https://github.com/jhaji2911/ouroboros/releases/download/v0.1.2/agent-vault-0.1.2-universal-apple-darwin.tar.gz"
+  sha256 "e69516299ff704ed5a3768ef39cd53cab78b71573ee78af0f4d17377755e7e02"
 
   license "MIT"
 
