@@ -181,11 +181,13 @@ jobs:
           # Update the sha256 for the universal tarball
           sed -i "s/sha256 \"[a-f0-9]\{64\}\"/sha256 \"${SHA}\"/" "${FORMULA}"
 
-          # Update the download URL version
-          sed -i "s|/download/v[0-9.]\+/|/download/v${VERSION}/|g" "${FORMULA}"
+          # Replace the entire URL in one shot — both the path version AND the filename version.
+          # Using a sed that reconstructs the full URL avoids partial-match bugs.
+          NEW_URL="https://github.com/jhaji2911/ouroboros/releases/download/v${VERSION}/agent-vault-${VERSION}-universal-apple-darwin.tar.gz"
+          sed -i "s|url \"https://github.com/jhaji2911/ouroboros/releases/download/v[0-9.]*/agent-vault-[0-9.]*-universal-apple-darwin.tar.gz\"|url \"${NEW_URL}\"|" "${FORMULA}"
 
           echo "Formula patched:"
-          grep -E 'version|sha256|download' "${FORMULA}"
+          grep -E 'version|sha256|url' "${FORMULA}"
 
       - name: Commit updated formula
         uses: stefanzweifel/git-auto-commit-action@v5
