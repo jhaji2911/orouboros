@@ -6,7 +6,7 @@ class AgentVault < Formula
   # Universal binary (arm64 + x86_64 merged with lipo).
   # SHA256 and URL version are auto-patched by .github/workflows/release-macos.yml
   # when a new tag is pushed. Do not edit these lines manually.
-  url "https://github.com/jhaji2911/ouroboros/releases/download/v0.1.1/agent-vault-0.1.0-universal-apple-darwin.tar.gz"
+  url "https://github.com/jhaji2911/ouroboros/releases/download/v0.1.1/agent-vault-0.1.1-universal-apple-darwin.tar.gz"
   sha256 "0baf47c93a01413144518383930ef42f018a620afa7298e61a2dff249cf539e3"
 
   license "MIT"
